@@ -1,37 +1,254 @@
-$iconCatalogue: url('../icons/sidebar/catalogue.svg') no-repeat;
+$companyLogo: url('../icons/company-logo.svg');
+$iconCatalogueDefault: url('../icons/sidebar/catalogue-default.svg') no-repeat;
 $iconCatalogueActive: url('../icons/sidebar/catalogue-active.svg') no-repeat;
-$iconHealth: url('../icons/sidebar/health.svg') no-repeat;
+$iconHealthDefault: url('../icons/sidebar/health-default.svg') no-repeat;
 $iconHealthActive: url('../icons/sidebar/health-active.svg') no-repeat;
-$iconBeauty: url('../icons/sidebar/beauty.svg') no-repeat;
+$iconBeautyDefault: url('../icons/sidebar/beauty-default.svg') no-repeat;
 $iconBeautyActive: url('../icons/sidebar/beauty-active.svg') no-repeat;
-$iconEntertainment: url('../icons/sidebar/entertainment.svg') no-repeat;
+$iconEntertainmentDefault: url('../icons/sidebar/entertainment-default.svg') no-repeat;
 $iconEntertainmentActive: url('../icons/sidebar/entertainment-active.svg') no-repeat;
-$iconCar: url('../icons/sidebar/car.svg') no-repeat;
+$iconCar: url('../icons/sidebar/car-default.svg') no-repeat;
 $iconCarActive: url('../icons/sidebar/car-active.svg') no-repeat;
+$iconCloseSidebarButton: url('../icons/sidebar/close-sidebar-button.svg') no-repeat;
+
+
+$activeColor: #34ABE0;
+$sidebarBacground: #F3F4F9;
+
+$desktopMinWidth: 1024px;
+$tabletMinWidth: 568px;
+
+$desktopSidebarWidth: 240px;
+$tabletSidebarOpenWidth: 240px;
+$tabletSidebarClosedWidth: 104px;
+$mobileSidebarOpenWidth: 192px;
+$mobileSidebarClosedWidth: 12px;
+
+@media screen and (min-width: $desktopMinWidth) {
+  .sidebar-container {
+    width: $desktopSidebarWidth;
+  }
+
+  .company {
+    padding: 41px;
+
+    &-logo {
+      height: 50px;
+      width: 50px;
+    }
+
+    &-name {
+      padding-left: 10px;
+      align-self: center;
+      font-size: 16px;
+    }
+  }
+
+  .close-sidebar-button {
+    display: none;
+  }
+
+  .category {
+    .mark {
+      width: 3px;
+      height: 24px;
+      margin-right: 37px;
+    }
+
+    .heading {
+      padding-left: 12px;
+    }
+  }
+}
+
+@media screen and (min-width: $tabletMinWidth) and (max-width: $desktopMinWidth) {
+  .sidebar {
+    .category {
+      .mark {
+        width: 3px;
+        height: 24px;
+        margin-right: 37px;
+      }
+    }
+
+    &.open {
+      .sidebar-container {
+        width: $tabletSidebarOpenWidth;
+      }
+
+      .company {
+        padding: 41px 0 47px 41px;
+
+        &-logo {
+          height: 24px;
+          width: 24px;
+        }
+
+        &-name {
+          padding-left: 5px;
+          align-self: center;
+          font-size: 16px;
+        }
+      }
+
+      .category {
+        .heading {
+          padding-left: 12px;
+        }
+      }
+    }
+
+    &.closed {
+      .sidebar-container {
+        width: $tabletSidebarClosedWidth;
+      }
+
+      .company {
+        padding: 41px 0 47px 41px;
+
+        &-logo {
+          height: 24px;
+          width: 24px;
+        }
+
+        &-name {
+          display: none;
+        }
+      }
+
+      .category {
+        .heading {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $tabletMinWidth) {
+  .sidebar {
+    .category {
+      .icon {
+        display: none;
+      }
+    }
+
+    &.open {
+      .sidebar-container {
+        width: $mobileSidebarOpenWidth;
+      }
+
+      .company {
+        padding: 40px 20px;
+
+        &-logo {
+          height: 24px;
+          width: 24px;
+        }
+
+        &-name {
+          padding-left: 5px;
+          align-self: center;
+          font-size: 16px;
+        }
+      }
+
+      .category {
+        .heading {
+          padding-left: 17px;
+          ;
+        }
+      }
+    }
+
+    &.closed {
+      .sidebar-container {
+        width: $mobileSidebarClosedWidth;
+      }
+
+      .company {
+
+        &-logo,
+        &-name {
+          display: none;
+        }
+      }
+
+      .category {
+        .heading {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.sidebar {
+  display: flex;
+  position: fixed;
+}
+
+.close-sidebar-button {
+  width: 48px;
+  height: 106px;
+  border: none;
+  background: $iconCloseSidebarButton;
+}
+
+.sidebar-container {
+  background: $sidebarBacground;
+  height: 100vh;
+}
 
 .company {
+  display: flex;
+
   &-logo {
-    height: 50px;
-    width: 50px;
-    background: black;
+    background: $companyLogo;
+    background-size: contain;
+  }
+
+  &-name {
+    font-family: PoppinsNormal, sans-serif;
   }
 }
 
 .category {
   height: 64px;
-  width: 100%;
+  display: flex;
+
+  .mark {
+    align-self: center;
+
+    &.active {
+      background: $activeColor;
+    }
+  }
 
   .icon {
+    align-self: center;
     width: 24px;
     height: 24px;
+  }
+
+  .heading {
+    align-self: center;
+    font-size: 16px;
+    font-family: OpenSansNormal, sans-serif;
+
+    &.active {
+      color: $activeColor;
+    }
   }
 }
 
 .catalogue {
   .icon {
-    background: $iconCatalogue;
+    &.default {
+      background: $iconCatalogueDefault;
+    }
 
-    &-active {
+    &.active {
       background: $iconCatalogueActive;
     }
   }
@@ -39,9 +256,11 @@ $iconCarActive: url('../icons/sidebar/car-active.svg') no-repeat;
 
 .health {
   .icon {
-    background: $iconHealth;
+    &.default {
+      background: $iconHealthDefault;
+    }
 
-    &-active {
+    &.active {
       background: $iconHealthActive;
     }
   }
@@ -49,9 +268,11 @@ $iconCarActive: url('../icons/sidebar/car-active.svg') no-repeat;
 
 .beauty {
   .icon {
-    background: $iconBeauty;
+    &.default {
+      background: $iconBeautyDefault;
+    }
 
-    &-active {
+    &.active {
       background: $iconBeautyActive;
     }
   }
@@ -59,9 +280,11 @@ $iconCarActive: url('../icons/sidebar/car-active.svg') no-repeat;
 
 .entertainment {
   .icon {
-    background: $iconEntertainment;
+    &.default {
+      background: $iconEntertainmentDefault;
+    }
 
-    &-active {
+    &.active {
       background: $iconEntertainmentActive;
     }
   }
@@ -69,10 +292,22 @@ $iconCarActive: url('../icons/sidebar/car-active.svg') no-repeat;
 
 .car {
   .icon {
-    background: $iconCar;
+    &.default {
+      background: $iconCar;
+    }
 
-    &-active {
+    &.active {
       background: $iconCarActive;
     }
   }
+}
+
+@font-face {
+  font-family: PoppinsNormal;
+  src: url(../fonts/Poppins/Poppins-Medium.ttf);
+}
+
+@font-face {
+  font-family: OpenSansNormal;
+  src: url(../fonts/OpenSans/OpenSans-Regular.ttf);
 }
