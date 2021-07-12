@@ -1,0 +1,78 @@
+$iconCatalogue: url('../icons/sidebar/catalogue.svg') no-repeat;
+$iconCatalogueActive: url('../icons/sidebar/catalogue-active.svg') no-repeat;
+$iconHealth: url('../icons/sidebar/health.svg') no-repeat;
+$iconHealthActive: url('../icons/sidebar/health-active.svg') no-repeat;
+$iconBeauty: url('../icons/sidebar/beauty.svg') no-repeat;
+$iconBeautyActive: url('../icons/sidebar/beauty-active.svg') no-repeat;
+$iconEntertainment: url('../icons/sidebar/entertainment.svg') no-repeat;
+$iconEntertainmentActive: url('../icons/sidebar/entertainment-active.svg') no-repeat;
+$iconCar: url('../icons/sidebar/car.svg') no-repeat;
+$iconCarActive: url('../icons/sidebar/car-active.svg') no-repeat;
+
+.company {
+  &-logo {
+    height: 50px;
+    width: 50px;
+    background: black;
+  }
+}
+
+.category {
+  height: 64px;
+  width: 100%;
+
+  .icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.catalogue {
+  .icon {
+    background: $iconCatalogue;
+
+    &-active {
+      background: $iconCatalogueActive;
+    }
+  }
+}
+
+.health {
+  .icon {
+    background: $iconHealth;
+
+    &-active {
+      background: $iconHealthActive;
+    }
+  }
+}
+
+.beauty {
+  .icon {
+    background: $iconBeauty;
+
+    &-active {
+      background: $iconBeautyActive;
+    }
+  }
+}
+
+.entertainment {
+  .icon {
+    background: $iconEntertainment;
+
+    &-active {
+      background: $iconEntertainmentActive;
+    }
+  }
+}
+
+.car {
+  .icon {
+    background: $iconCar;
+
+    &-active {
+      background: $iconCarActive;
+    }
+  }
+}
