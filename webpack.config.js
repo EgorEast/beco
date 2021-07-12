@@ -116,16 +116,11 @@ module.exports = {
 				use: cssLoaders('sass-loader'),
 			},
 			{
-				test: /\.(png|jpg|svg|gif)$/,
-				use: ['file-loader'],
-			},
-			{
-				test: /\.(ttf|woff|woff2|eot)$/,
-				use: ['file-loader'],
-			},
-			{
-				test: /\.csv$/,
-				use: ['csv-loader'],
+				test: /\.(jpe?g$|gif$|png$|PNG$|svg$|woff(2)?$|ttf$|eot)$/,
+				loader: 'file-loader',
+				options: {
+					name: '[path][name].[ext]',
+				},
 			},
 			{
 				test: /\.js$/,
