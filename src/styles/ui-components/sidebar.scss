@@ -10,13 +10,9 @@ $iconEntertainmentActive: url('../icons/sidebar/entertainment-active.svg') no-re
 $iconCar: url('../icons/sidebar/car-default.svg') no-repeat;
 $iconCarActive: url('../icons/sidebar/car-active.svg') no-repeat;
 $iconCloseSidebarButton: url('../icons/sidebar/close-sidebar-button.svg') no-repeat;
+$iconOPenSidebarButton: url('../icons/sidebar/open-sidebar-button.svg') no-repeat;
 
-
-$activeColor: #34ABE0;
 $sidebarBacground: #F3F4F9;
-
-$desktopMinWidth: 1024px;
-$tabletMinWidth: 568px;
 
 $desktopSidebarWidth: 240px;
 $tabletSidebarOpenWidth: 240px;
@@ -44,7 +40,7 @@ $mobileSidebarClosedWidth: 12px;
     }
   }
 
-  .close-sidebar-button {
+  .closing-opening-sidebar-button {
     display: none;
   }
 
@@ -185,14 +181,24 @@ $mobileSidebarClosedWidth: 12px;
 
 .sidebar {
   display: flex;
-  position: fixed;
+
+  &.open {
+    .closing-opening-sidebar-button {
+      background: $iconCloseSidebarButton;
+    }
+  }
+
+  &.closed {
+    .closing-opening-sidebar-button {
+      background: $iconOPenSidebarButton;
+    }
+  }
 }
 
-.close-sidebar-button {
+.closing-opening-sidebar-button {
   width: 48px;
   height: 106px;
   border: none;
-  background: $iconCloseSidebarButton;
 }
 
 .sidebar-container {
@@ -300,14 +306,4 @@ $mobileSidebarClosedWidth: 12px;
       background: $iconCarActive;
     }
   }
-}
-
-@font-face {
-  font-family: PoppinsNormal;
-  src: url(../fonts/Poppins/Poppins-Medium.ttf);
-}
-
-@font-face {
-  font-family: OpenSansNormal;
-  src: url(../fonts/OpenSans/OpenSans-Regular.ttf);
 }
