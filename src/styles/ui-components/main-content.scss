@@ -1,0 +1,11 @@
+@media screen and (max-width: $desktopMinWidth) {
+  .main-content {
+    position: relative;
+    left: -48px;
+    margin-right: -48px;
+  }
+}
+
+.main-content {
+  width: 100%;
+}

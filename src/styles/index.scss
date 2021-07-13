@@ -1,6 +1,13 @@
+@import './ui-components/global-vars.scss';
 @import './ui-components/sidebar.scss';
+@import './ui-components/main-content.scss';
+@import './ui-components/header.scss';
+@import '../fonts/my-fonts.scss';
+
 
 body {
   margin: 0;
   padding: 0;
+  display: flex;
+  min-width: 305px;
 }

@@ -1,0 +1,132 @@
+$iconSearch: url('../icons/header/search.svg') no-repeat;
+
+@media screen and (min-width: $desktopMinWidth) {
+  .header {
+    margin-bottom: 40px;
+    padding: 0 60px;
+  }
+
+  .headline {
+    justify-content: flex-start;
+    height: 109px;
+    font-size: 28px;
+  }
+
+  .search-container {
+    .search-input {
+      font-size: 18px;
+    }
+  }
+}
+
+@media screen and (min-width: $tabletMinWidth) and (max-width: $desktopMinWidth) {
+  .header {
+    margin-bottom: 27px;
+    padding-right: 26px;
+
+    .search-container {
+      .search-input {
+        font-size: 18px;
+      }
+    }
+
+    &.scrolled-up {
+      .headline {
+        height: 102px;
+        justify-content: flex-end;
+        font-size: 28px;
+      }
+
+      .search-container {
+        padding-left: 26px;
+      }
+    }
+
+    &.scrolled-down {
+      padding-top: 27px;
+
+      .headline {
+        display: none;
+      }
+
+      .search-container {
+        padding-left: 71px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $tabletMinWidth) {
+  .header {
+    margin-bottom: 27px;
+    padding-right: 20px;
+
+    .search-container {
+      .search-input {
+        font-size: 14px;
+      }
+    }
+
+    &.scrolled-up {
+      .headline {
+        height: 90px;
+        justify-content: flex-end;
+        font-size: 24px;
+
+        .text {
+          padding-top: 16px;
+        }
+      }
+
+      .search-container {
+        padding-left: 20px;
+      }
+    }
+
+    &.scrolled-down {
+      padding-top: 27px;
+
+      .headline {
+        display: none;
+      }
+
+      .search-container {
+        padding-left: 68px;
+
+        .search-input {
+          &.icon-search {
+            background: none;
+            padding-left: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.headline {
+  display: flex;
+  align-items: center;
+
+  .text {
+    font-family: OpenSansNormal;
+  }
+}
+
+.search-container {
+  .search-input {
+    height: 52px;
+    width: 100%;
+    outline: none;
+    border: 1px solid #33333314;
+    box-sizing: border-box;
+    border-radius: 50px;
+    padding-left: 16px;
+
+    &.icon-search {
+      background: $iconSearch;
+      background-position: 16px;
+      padding-left: 44px;
+    }
+  }
+}
