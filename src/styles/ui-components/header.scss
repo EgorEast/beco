@@ -130,3 +130,7 @@ $iconSearch: url('../icons/header/search.svg') no-repeat;
     }
   }
 }
+
+.search-input::placeholder {
+  color: #0000002d;
+}
