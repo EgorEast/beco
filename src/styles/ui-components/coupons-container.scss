@@ -1,0 +1,17 @@
+@media screen and (min-width: $desktopMinWidth) {
+  .coupons-container {
+    padding: 20px 40px 0;
+  }
+}
+
+@media screen and (min-width: $tabletMinWidth) and (max-width: $desktopMinWidth) {
+  .coupons-container {
+    padding: 7px 6px 0;
+  }
+}
+
+@media screen and (max-width: $tabletMinWidth) {
+  .coupons-container {
+    padding: 12px 5px 0;
+  }
+}

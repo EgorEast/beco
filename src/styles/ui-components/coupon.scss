@@ -1,0 +1,131 @@
+$couponDefaultBackground: url(../images/coupon-bcgnds/coupon-default-bcgnd.png) no-repeat;
+$couponDefaultBackgroundShadow: url(../images/coupon-bcgnds/coupon-default-bcgnd-shadow.png) no-repeat;
+$couponActiveBackground: url(../images/coupon-bcgnds/coupon-active-bcgnd.png)no-repeat;
+
+$widthCouponDesktop: 346px;
+$heightCouponDesktop: 161px;
+$widthCouponTablet: 296px;
+$heightCouponTablet: 144px;
+$widthCouponMobile: 268px;
+$heightCouponMobile: 130px;
+
+$addWidthForShadowDesktop: 7px;
+$addHeightForShadowDesktop: 9px;
+$addWidthForShadowTablet: 8px;
+$addHeightForShadowTablet: 12px;
+$addWidthForShadowMobile: 7px;
+$addHeightForShadowMobile: 13px;
+
+$relativeTopDesktop: -3px;
+$relativeLeftDesktop: -4px;
+$relativeTopTablet: -2px;
+$relativeLeftTablet: -4px;
+$relativeTopMobile: -2px;
+$relativeLeftMobile: -4px;
+
+@media screen and (min-width: $desktopMinWidth) {
+  .coupon {
+    width: $widthCouponDesktop;
+    height: $heightCouponDesktop;
+    margin: 20px;
+
+    .content {
+      height: 100%;
+    }
+
+    &.default {
+      .shadow {
+        width: calc(100% + #{$addWidthForShadowDesktop});
+        height: calc(100% + #{$addHeightForShadowDesktop});
+        left: $relativeLeftDesktop;
+        top: $relativeTopDesktop;
+      }
+
+      .content {
+        top: calc(-#{$heightCouponDesktop} - #{$addHeightForShadowDesktop});
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $tabletMinWidth) and (max-width: $desktopMinWidth) {
+  .coupon {
+    width: $widthCouponTablet;
+    height: $heightCouponTablet;
+    margin: 20px;
+
+    .content {
+      height: calc(100% - 6px);
+    }
+
+    &.default {
+      .shadow {
+        width: calc(100% + #{$addWidthForShadowTablet});
+        height: calc(100% + #{$addHeightForShadowTablet});
+        left: $relativeLeftTablet;
+        top: $relativeTopTablet;
+      }
+
+      .content {
+        top: calc(-#{$heightCouponTablet} - #{$addHeightForShadowTablet});
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $tabletMinWidth) {
+  .coupon {
+    width: $widthCouponMobile;
+    height: $heightCouponMobile;
+    margin: 15px;
+
+    .content {
+      height: calc(100% - 6px);
+    }
+
+    &.default {
+      .shadow {
+        width: calc(100% + #{$addWidthForShadowMobile});
+        height: calc(100% + #{$addHeightForShadowMobile});
+        left: $relativeLeftMobile;
+        top: $relativeTopMobile;
+      }
+
+      .content {
+        top: calc(-#{$heightCouponMobile} - #{$addHeightForShadowMobile});
+      }
+    }
+  }
+}
+
+.coupon {
+  .content {
+    width: 100%;
+    display: flex;
+  }
+
+  &.active {
+    .shadow {
+      display: none;
+    }
+
+    .content {
+      background: $couponActiveBackground;
+      background-size: contain;
+    }
+  }
+
+  &.default {
+    .shadow {
+      background: $couponDefaultBackgroundShadow;
+      background-size: contain;
+      position: relative;
+    }
+
+    .content {
+      background: $couponDefaultBackground;
+      background-size: contain;
+      position: relative;
+    }
+  }
+}

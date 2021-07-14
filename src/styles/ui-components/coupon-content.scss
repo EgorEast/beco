@@ -1,0 +1,98 @@
+$wineImage: url(../images/coupons-pictures/wine.png) no-repeat;
+$beerImage: url(../images/coupons-pictures/beer.png) no-repeat;
+$cakeImage: url(../images/coupons-pictures/cake.png) no-repeat;
+$sushiImage: url(../images/coupons-pictures/sushi.png) no-repeat;
+$fruitImage: url(../images/coupons-pictures/fruit.png) no-repeat;
+$stakeImage: url(../images/coupons-pictures/stake.png) no-repeat;
+$shawarmaImage: url(../images/coupons-pictures/shawarma.png) no-repeat;
+$iceCreamImage: url('../images/coupons-pictures/ice cream.png') no-repeat;
+
+@media screen and (min-width: $desktopMinWidth) {
+  .coupon {
+    .content {}
+  }
+}
+
+@media screen and (min-width: $tabletMinWidth) and (max-width: $desktopMinWidth) {
+  .coupon {
+    .content {}
+  }
+}
+
+@media screen and (max-width: $tabletMinWidth) {
+  .coupon {
+    .content {}
+  }
+}
+
+.coupon {
+  .content {
+    .information {
+      // flex-grow: 62.4;
+      width: 62%;
+      height: 100%;
+      font-family: RobotoNormal;
+
+      .coupon-name {
+        .title {
+          text-transform: uppercase;
+        }
+      }
+
+      .bonus-type {
+        text-transform: uppercase;
+
+        .data {
+          color: DF212D;
+        }
+      }
+    }
+
+
+    .picture {
+      // flex-grow: 37.5;
+      width: 38%;
+      height: calc(100% - 1px);
+
+      &.wine {
+        background: $wineImage;
+        background-size: contain;
+      }
+
+      &.beer {
+        background: $beerImage;
+        background-size: contain;
+      }
+
+      &.cake {
+        background: $cakeImage;
+        background-size: contain;
+      }
+
+      &.sushi {
+        background: $sushiImage;
+        background-size: contain;
+      }
+
+      &.fruit {
+        background: $fruitImage;
+        background-size: contain;
+      }
+
+      &.stake {
+        background: $stakeImage;
+        background-size: contain;
+      }
+
+      &.shawarma {
+        background: $shawarmaImage;
+        background-size: contain;
+      }
+
+      &.ice-cream {
+        background: $iceCreamImage;
+        background-size: contain;
+      }
+    }
+  }
+}
