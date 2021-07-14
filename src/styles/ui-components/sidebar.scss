@@ -21,6 +21,9 @@ $tabletSidebarClosedWidth: 104px;
 $mobileSidebarOpenWidth: 192px;
 $mobileSidebarClosedWidth: 12px;
 
+$closingOpeningSidebarButtonWidth: 48px;
+$closingOpeningSidebarButtonHeight: 106px;
+
 @media screen and (min-width: $desktopMinWidth) {
   .sidebar-container {
     width: $desktopSidebarWidth;
@@ -69,6 +72,9 @@ $mobileSidebarClosedWidth: 12px;
     }
 
     &.open {
+      position: fixed;
+      z-index: 1;
+
       .sidebar-container {
         width: $tabletSidebarOpenWidth;
       }
@@ -131,6 +137,9 @@ $mobileSidebarClosedWidth: 12px;
     }
 
     &.open {
+      position: fixed;
+      z-index: 1;
+
       .sidebar-container {
         width: $mobileSidebarOpenWidth;
       }
@@ -197,8 +206,8 @@ $mobileSidebarClosedWidth: 12px;
 }
 
 .closing-opening-sidebar-button {
-  width: 48px;
-  height: 106px;
+  width: $closingOpeningSidebarButtonWidth;
+  height: $closingOpeningSidebarButtonHeight;
   border: none;
 }
 
