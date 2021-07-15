@@ -57,8 +57,10 @@ function changeClassListCoupon() {
 function scrollContainer() {
 	if (this.oldScroll < this.scrollTop) {
 		header.classList.add('scrolled-down');
+		couponsContainer.classList.add('scrolled-down');
 	} else {
 		header.classList.remove('scrolled-down');
+		couponsContainer.classList.remove('scrolled-down');
 	}
 	this.oldScroll = this.scrollTop;
 }

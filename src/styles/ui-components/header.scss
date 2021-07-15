@@ -1,4 +1,8 @@
 $iconSearch: url('../icons/header/search.svg') no-repeat;
+$searchInputHeight: 52px;
+$headlineHeightDesktop: 109px;
+$headlineHeightTablet: 102px;
+$headlineHeightMobile: 90px;
 
 @media screen and (min-width: $desktopMinWidth) {
   .header {
@@ -8,7 +12,7 @@ $iconSearch: url('../icons/header/search.svg') no-repeat;
 
   .headline {
     justify-content: flex-start;
-    height: 109px;
+    height: $headlineHeightDesktop;
     font-size: 28px;
   }
 
@@ -31,7 +35,7 @@ $iconSearch: url('../icons/header/search.svg') no-repeat;
     }
 
     .headline {
-      height: 102px;
+      height: $headlineHeightTablet;
       justify-content: flex-end;
       font-size: 28px;
     }
@@ -68,7 +72,7 @@ $iconSearch: url('../icons/header/search.svg') no-repeat;
     }
 
     .headline {
-      height: 90px;
+      height: $headlineHeightMobile;
       justify-content: flex-end;
       font-size: 24px;
 
@@ -113,7 +117,7 @@ $iconSearch: url('../icons/header/search.svg') no-repeat;
 
 .search-container {
   .search-input {
-    height: 52px;
+    height: $searchInputHeight;
     width: 100%;
     outline: none;
     border: 1px solid #33333314;
