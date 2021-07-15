@@ -9,90 +9,185 @@ $iceCreamImage: url('../images/coupons-pictures/ice cream.png') no-repeat;
 
 @media screen and (min-width: $desktopMinWidth) {
   .coupon {
-    .content {}
+    .content {
+      .information {
+        padding: 16px 0 16px 20px;
+
+        .coupon-name {
+
+          .title,
+          .description {
+            font-size: 16px;
+          }
+        }
+
+        .bonus-type {
+          .data {
+            font-size: 36px;
+          }
+
+          .essence {
+            font-size: 16px;
+          }
+        }
+      }
+    }
   }
 }
 
 @media screen and (min-width: $tabletMinWidth) and (max-width: $desktopMinWidth) {
   .coupon {
-    .content {}
+    .content {
+
+      .information {
+        padding: 15px 0 15px 18px;
+
+        .coupon-name {
+
+          .title,
+          .description {
+            font-size: 14px;
+          }
+        }
+
+        .bonus-type {
+          .data {
+            font-size: 36px;
+          }
+
+          .essence {
+            font-size: 16px;
+          }
+        }
+      }
+    }
   }
 }
 
 @media screen and (max-width: $tabletMinWidth) {
   .coupon {
-    .content {}
+    .content {
+      .information {
+        padding: 16px 0 16px 20px;
+
+        .coupon-name {
+
+          .title,
+          .description {
+            font-size: 12px;
+          }
+        }
+
+        .bonus-type {
+          .data {
+            font-size: 28px;
+          }
+
+          .essence {
+            font-size: 12px;
+          }
+        }
+      }
+    }
   }
 }
 
 .coupon {
   .content {
     .information {
-      // flex-grow: 62.4;
       width: 62%;
-      height: 100%;
-      font-family: RobotoNormal;
+      box-sizing: border-box;
 
       .coupon-name {
         .title {
-          text-transform: uppercase;
+          font-family: RobotoBold, sans-serif;
+          letter-spacing: 0.1em;
+        }
+
+        .description {
+          font-family: RobotoRegular, sans-serif;
+          opacity: 0.5;
         }
       }
 
       .bonus-type {
-        text-transform: uppercase;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
 
         .data {
-          color: DF212D;
+          font-family: RobotoMedium, sans-serif;
+          color: #DF212D;
         }
+
+        .essence {
+          font-family: RobotoRegular, sans-serif;
+          letter-spacing: 0.4em;
+          opacity: 0.5;
+        }
+      }
+
+      .coupon-name .title,
+      .bonus-type {
+        text-transform: uppercase;
+      }
+
+      .coupon-name,
+      .bonus-type {
+        height: 50%;
       }
     }
 
 
     .picture {
-      // flex-grow: 37.5;
       width: 38%;
-      height: calc(100% - 1px);
 
       &.wine {
         background: $wineImage;
-        background-size: contain;
       }
 
       &.beer {
         background: $beerImage;
-        background-size: contain;
       }
 
       &.cake {
         background: $cakeImage;
-        background-size: contain;
       }
 
       &.sushi {
         background: $sushiImage;
-        background-size: contain;
       }
 
       &.fruit {
         background: $fruitImage;
-        background-size: contain;
       }
 
       &.stake {
         background: $stakeImage;
-        background-size: contain;
       }
 
       &.shawarma {
         background: $shawarmaImage;
-        background-size: contain;
       }
 
       &.ice-cream {
         background: $iceCreamImage;
+      }
+
+      &.wine,
+      &.beer,
+      &.cake,
+      &.sushi,
+      &.fruit,
+      &.stake,
+      &.shawarma,
+      &.ice-cream {
         background-size: contain;
       }
+    }
+
+    .picture {
+      height: 100%;
     }
   }
 }

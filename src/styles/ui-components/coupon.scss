@@ -27,7 +27,7 @@ $relativeLeftMobile: -4px;
   .coupon {
     width: $widthCouponDesktop;
     height: $heightCouponDesktop;
-    margin: 20px;
+    padding: 20px 0 0 20px;
 
     .shadow {
       width: calc(100% + #{$addWidthForShadowDesktop});
@@ -55,7 +55,7 @@ $relativeLeftMobile: -4px;
   .coupon {
     width: $widthCouponTablet;
     height: $heightCouponTablet;
-    margin: 20px;
+    padding: 20px 0 0 20px;
 
     .shadow {
       width: calc(100% + #{$addWidthForShadowTablet});
@@ -83,7 +83,7 @@ $relativeLeftMobile: -4px;
   .coupon {
     width: $widthCouponMobile;
     height: $heightCouponMobile;
-    margin: 15px;
+    padding: 15px 0 0 15px;
 
     .shadow {
       width: calc(100% + #{$addWidthForShadowMobile});
@@ -108,6 +108,8 @@ $relativeLeftMobile: -4px;
 }
 
 .coupon {
+  margin-left: auto;
+  margin-right: auto;
 
   .content,
   .frame {
