@@ -8,17 +8,13 @@
 
 @media screen and (min-width: $tabletMinWidth) and (max-width: $desktopMinWidth) {
   .main-content {
-    &.opened-sidebar {
-      padding-left: calc(#{$tabletSidebarClosedWidth} + #{$closingOpeningSidebarButtonWidth});
-    }
+    padding-left: calc(#{$tabletSidebarClosedWidth} + #{$closingOpeningSidebarButtonWidth});
   }
 }
 
 @media screen and (max-width: $tabletMinWidth) {
   .main-content {
-    &.opened-sidebar {
-      padding-left: calc(#{$mobileSidebarClosedWidth} + #{$closingOpeningSidebarButtonWidth});
-    }
+    padding-left: calc(#{$mobileSidebarClosedWidth} + #{$closingOpeningSidebarButtonWidth});
   }
 }
 

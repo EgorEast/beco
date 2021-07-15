@@ -63,6 +63,9 @@ $closingOpeningSidebarButtonHeight: 106px;
 
 @media screen and (min-width: $tabletMinWidth) and (max-width: $desktopMinWidth) {
   .sidebar {
+    position: absolute;
+    height: 100%;
+
     .category {
       .mark {
         width: 3px;
@@ -131,6 +134,9 @@ $closingOpeningSidebarButtonHeight: 106px;
 
 @media screen and (max-width: $tabletMinWidth) {
   .sidebar {
+    height: 100%;
+    position: absolute;
+
     .category {
       .icon {
         display: none;
