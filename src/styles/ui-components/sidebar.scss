@@ -7,7 +7,7 @@ $iconBeautyDefault: url('../icons/sidebar/beauty-default.svg') no-repeat;
 $iconBeautyActive: url('../icons/sidebar/beauty-active.svg') no-repeat;
 $iconEntertainmentDefault: url('../icons/sidebar/entertainment-default.svg') no-repeat;
 $iconEntertainmentActive: url('../icons/sidebar/entertainment-active.svg') no-repeat;
-$iconCar: url('../icons/sidebar/car-default.svg') no-repeat;
+$iconCarDefault: url('../icons/sidebar/car-default.svg') no-repeat;
 $iconCarActive: url('../icons/sidebar/car-active.svg') no-repeat;
 
 $iconCloseSidebarButton: url('../icons/sidebar/close-sidebar-button.svg') no-repeat;
@@ -233,87 +233,91 @@ $closingOpeningSidebarButtonHeight: 106px;
   height: 64px;
   display: flex;
 
-  .mark {
+  .mark,
+  .icon,
+  .heading {
     align-self: center;
+  }
 
-    &.active {
+  &.default {
+    &.catalogue {
+      .icon {
+        background: $iconCatalogueDefault;
+      }
+    }
+
+    &.health {
+      .icon {
+        background: $iconHealthDefault;
+      }
+    }
+
+    &.beauty {
+      .icon {
+        background: $iconBeautyDefault;
+      }
+    }
+
+    &.entertainment {
+      .icon {
+        background: $iconEntertainmentDefault;
+      }
+    }
+
+    &.car {
+      .icon {
+        background: $iconCarDefault;
+      }
+    }
+  }
+
+  &.active {
+    &.catalogue {
+      .icon {
+        background: $iconCatalogueActive;
+      }
+    }
+
+    &.health {
+      .icon {
+        background: $iconHealthActive;
+      }
+    }
+
+    &.beauty {
+      .icon {
+        background: $iconBeautyActive;
+      }
+    }
+
+    &.entertainment {
+      .icon {
+        background: $iconEntertainmentActive;
+      }
+    }
+
+    &.car {
+      .icon {
+        background: $iconCarActive;
+      }
+    }
+
+    .mark {
       background: $activeColor;
+    }
+
+    .heading {
+      color: $activeColor;
     }
   }
 
   .icon {
-    align-self: center;
     width: 24px;
     height: 24px;
   }
 
   .heading {
-    align-self: center;
     font-size: 16px;
     font-family: OpenSansNormal, sans-serif;
-
-    &.active {
-      color: $activeColor;
-    }
-  }
-}
-
-.catalogue {
-  .icon {
-    &.default {
-      background: $iconCatalogueDefault;
-    }
-
-    &.active {
-      background: $iconCatalogueActive;
-    }
-  }
-}
-
-.health {
-  .icon {
-    &.default {
-      background: $iconHealthDefault;
-    }
-
-    &.active {
-      background: $iconHealthActive;
-    }
-  }
-}
-
-.beauty {
-  .icon {
-    &.default {
-      background: $iconBeautyDefault;
-    }
-
-    &.active {
-      background: $iconBeautyActive;
-    }
-  }
-}
-
-.entertainment {
-  .icon {
-    &.default {
-      background: $iconEntertainmentDefault;
-    }
-
-    &.active {
-      background: $iconEntertainmentActive;
-    }
-  }
-}
-
-.car {
-  .icon {
-    &.default {
-      background: $iconCar;
-    }
-
-    &.active {
-      background: $iconCarActive;
-    }
   }
 }
