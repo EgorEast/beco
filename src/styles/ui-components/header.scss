@@ -30,16 +30,14 @@ $iconSearch: url('../icons/header/search.svg') no-repeat;
       }
     }
 
-    &.scrolled-up {
-      .headline {
-        height: 102px;
-        justify-content: flex-end;
-        font-size: 28px;
-      }
+    .headline {
+      height: 102px;
+      justify-content: flex-end;
+      font-size: 28px;
+    }
 
-      .search-container {
-        padding-left: 26px;
-      }
+    .search-container {
+      padding-left: 26px;
     }
 
     &.scrolled-down {
@@ -67,15 +65,13 @@ $iconSearch: url('../icons/header/search.svg') no-repeat;
       }
     }
 
-    &.scrolled-up {
-      .headline {
-        height: 90px;
-        justify-content: flex-end;
-        font-size: 24px;
+    .headline {
+      height: 90px;
+      justify-content: flex-end;
+      font-size: 24px;
 
-        .text {
-          padding-top: 16px;
-        }
+      .text {
+        padding-top: 16px;
       }
 
       .search-container {

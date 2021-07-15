@@ -19,4 +19,6 @@
 .coupons-container {
   display: flex;
   flex-wrap: wrap;
+  height: 452px;
+  overflow-y: auto;
 }

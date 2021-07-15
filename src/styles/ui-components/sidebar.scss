@@ -74,6 +74,7 @@ $closingOpeningSidebarButtonHeight: 106px;
     &.open {
       position: fixed;
       z-index: 1;
+      height: 100%;
 
       .sidebar-container {
         width: $tabletSidebarOpenWidth;
@@ -139,6 +140,7 @@ $closingOpeningSidebarButtonHeight: 106px;
     &.open {
       position: fixed;
       z-index: 1;
+      height: 100%;
 
       .sidebar-container {
         width: $mobileSidebarOpenWidth;
@@ -181,9 +183,7 @@ $closingOpeningSidebarButtonHeight: 106px;
       }
 
       .category {
-        .heading {
-          display: none;
-        }
+        display: none;
       }
     }
   }
@@ -209,6 +209,7 @@ $closingOpeningSidebarButtonHeight: 106px;
   width: $closingOpeningSidebarButtonWidth;
   height: $closingOpeningSidebarButtonHeight;
   border: none;
+  z-index: 1;
 }
 
 .sidebar-container {
