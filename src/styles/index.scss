@@ -7,10 +7,16 @@
 @import './ui-components/coupon-content.scss';
 @import '../fonts/my-fonts.scss';
 
+::-webkit-scrollbar {
+  display: none;
+}
 
-body {
+* {
   margin: 0;
   padding: 0;
+}
+
+body {
   display: flex;
   min-width: 305px;
 }
