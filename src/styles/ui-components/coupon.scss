@@ -1,6 +1,6 @@
-$couponDefaultBackground: url(../images/coupon-bcgnds/coupon-default-bcgnd.png) no-repeat;
-$couponDefaultBackgroundShadow: url(../images/coupon-bcgnds/coupon-default-bcgnd-shadow.png) no-repeat;
-$couponActiveBackground: url(../images/coupon-bcgnds/coupon-active-bcgnd.png)no-repeat;
+$couponBackground: url(../images/coupon-bcgnds/coupon-default-bcgnd.png) no-repeat;
+$couponBackgroundShadow: url(../images/coupon-bcgnds/coupon-default-bcgnd-shadow.png) no-repeat;
+$couponActiveFrame: url(../images/coupon-bcgnds/coupon-active-frame.svg)no-repeat;
 
 $widthCouponDesktop: 346px;
 $heightCouponDesktop: 161px;
@@ -29,21 +29,24 @@ $relativeLeftMobile: -4px;
     height: $heightCouponDesktop;
     margin: 20px;
 
-    .content {
-      height: 100%;
+    .shadow {
+      width: calc(100% + #{$addWidthForShadowDesktop});
+      height: calc(100% + #{$addHeightForShadowDesktop});
+      left: $relativeLeftDesktop;
+      top: $relativeTopDesktop;
     }
 
-    &.default {
-      .shadow {
-        width: calc(100% + #{$addWidthForShadowDesktop});
-        height: calc(100% + #{$addHeightForShadowDesktop});
-        left: $relativeLeftDesktop;
-        top: $relativeTopDesktop;
-      }
+    .content {
+      top: calc(-#{$heightCouponDesktop} - #{$addHeightForShadowDesktop});
+    }
 
-      .content {
-        top: calc(-#{$heightCouponDesktop} - #{$addHeightForShadowDesktop});
-      }
+    .frame {
+      top: calc(2 * -#{$heightCouponDesktop} - #{$addHeightForShadowDesktop});
+    }
+
+    .content,
+    .frame {
+      height: 100%;
     }
   }
 }
@@ -54,21 +57,24 @@ $relativeLeftMobile: -4px;
     height: $heightCouponTablet;
     margin: 20px;
 
-    .content {
-      height: calc(100% - 6px);
+    .shadow {
+      width: calc(100% + #{$addWidthForShadowTablet});
+      height: calc(100% + #{$addHeightForShadowTablet});
+      left: $relativeLeftTablet;
+      top: $relativeTopTablet;
     }
 
-    &.default {
-      .shadow {
-        width: calc(100% + #{$addWidthForShadowTablet});
-        height: calc(100% + #{$addHeightForShadowTablet});
-        left: $relativeLeftTablet;
-        top: $relativeTopTablet;
-      }
+    .content {
+      top: calc(-#{$heightCouponTablet} - #{$addHeightForShadowTablet});
+    }
 
-      .content {
-        top: calc(-#{$heightCouponTablet} - #{$addHeightForShadowTablet});
-      }
+    .frame {
+      top: calc(2 * -#{$heightCouponTablet} - #{$addHeightForShadowTablet} / 2);
+    }
+
+    .content,
+    .frame {
+      height: calc(100% - 6px);
     }
   }
 }
@@ -79,53 +85,61 @@ $relativeLeftMobile: -4px;
     height: $heightCouponMobile;
     margin: 15px;
 
-    .content {
-      height: calc(100% - 6px);
+    .shadow {
+      width: calc(100% + #{$addWidthForShadowMobile});
+      height: calc(100% + #{$addHeightForShadowMobile});
+      left: $relativeLeftMobile;
+      top: $relativeTopMobile;
     }
 
-    &.default {
-      .shadow {
-        width: calc(100% + #{$addWidthForShadowMobile});
-        height: calc(100% + #{$addHeightForShadowMobile});
-        left: $relativeLeftMobile;
-        top: $relativeTopMobile;
-      }
+    .content {
+      top: calc(-#{$heightCouponMobile} - #{$addHeightForShadowMobile});
+    }
 
-      .content {
-        top: calc(-#{$heightCouponMobile} - #{$addHeightForShadowMobile});
-      }
+    .frame {
+      top: calc(2 * -#{$heightCouponMobile} - #{$addHeightForShadowMobile} / 2);
+    }
+
+    .content,
+    .frame {
+      height: calc(100% - 6px);
     }
   }
 }
 
 .coupon {
-  .content {
+
+  .content,
+  .frame {
     width: 100%;
+  }
+
+  .content {
     display: flex;
   }
 
-  &.active {
-    .shadow {
-      display: none;
-    }
+  .shadow {
+    background: $couponBackgroundShadow;
+  }
 
-    .content {
-      background: $couponActiveBackground;
-      background-size: contain;
-    }
+  .content {
+    background: $couponBackground;
+  }
+
+  .frame {
+    background: $couponActiveFrame;
+  }
+
+  .shadow,
+  .content,
+  .frame {
+    background-size: contain;
+    position: relative;
   }
 
   &.default {
-    .shadow {
-      background: $couponDefaultBackgroundShadow;
-      background-size: contain;
-      position: relative;
-    }
-
-    .content {
-      background: $couponDefaultBackground;
-      background-size: contain;
-      position: relative;
+    .frame {
+      display: none;
     }
   }
 }
